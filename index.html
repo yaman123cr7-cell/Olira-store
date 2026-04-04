@@ -23,8 +23,23 @@ header {
 }
 
 .logo {
-    width: 300px;
+    width: 260px;
     height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 10px rgba(212,175,55,0.35));
+    animation: floatLogo 3s ease-in-out infinite;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.04);
+}
+
+@keyframes floatLogo {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
 }
     header {
     background-color: #000;
