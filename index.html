@@ -346,30 +346,64 @@ function show(section){
 }
 
 function addToCart(name, price) {
-  const message = `مرحباً، أرغب بطلب من OLIRA Beauty:%0A• المنتج: ${name}%0A• السعر: ₪${price}%0Aأريد إكمال الطلب ومعرفة التوصيل.`;
-  window.open(`https://wa.me/972523848599?text=${message}`, '_blank');
+  cart.push({ name, price: Number(price) });
+  renderCart();
+  alert("تمت الإضافة إلى السلة");
 }
 
-function renderCart(){
-    let container = document.getElementById("cartItems");
-    let total = 0;
-    container.innerHTML = "";
-    cart.forEach(item=>{
-        container.innerHTML += "<p>"+item.name+" - ₪"+item.price+"</p>";
-        total += item.price;
-    });
-    document.getElementById("total").innerText = "المجموع: ₪" + total;
+function renderCart() {
+  let container = document.getElementById("cartItems");
+  let total = 0;
+
+  container.innerHTML = "";
+
+  cart.forEach((item, index) => {
+    container.innerHTML += `
+      <div style="background:#fff; margin:10px 0; padding:12px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.08); text-align:right;">
+        <strong>${item.name}</strong><br>
+        السعر: ₪${item.price}<br>
+        <button onclick="removeFromCart(${index})" style="
+          margin-top:8px;
+          padding:8px 14px;
+          border:none;
+          border-radius:20px;
+          background:#111;
+          color:#fff;
+          cursor:pointer;
+        ">حذف</button>
+      </div>
+    `;
+    total += Number(item.price);
+  });
+
+  document.getElementById("total").innerHTML = "الإجمالي: ₪" + total;
 }
 
-function sendOrder(){
-    let phone = "972523848599";
-    let text = "طلب جديد:%0A";
-    cart.forEach(item=>{
-        text += item.name + " - ₪" + item.price + "%0A";
-    });
-    window.open("https://wa.me/" + phone + "?text=" + text);
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  renderCart();
 }
-</script>
+
+function sendOrder() {
+  if (cart.length === 0) {
+    alert("السلة فارغة");
+    return;
+  }
+
+  let phone = "972523848599";
+  let text = "مرحباً، أرغب بطلب من OLIRA Beauty:%0A%0A";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    text += `${index + 1}- ${item.name} - ₪${item.price}%0A`;
+    total += Number(item.price);
+  });
+
+  text += `%0Aالإجمالي: ₪${total}%0A`;
+  text += "أريد إكمال الطلب ومعرفة التوصيل.";
+
+  window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+}
 
 <div class="contact">
     <h2>تواصل معنا</h2>
