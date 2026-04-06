@@ -157,6 +157,11 @@ button.add {
    transform: scale(1.1);
    background: #c13584;
 }
+    @keyframes shine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+    }
 </style></head>
 <body><header>
 <div class="logo-container">
@@ -167,17 +172,19 @@ button.add {
 <a href="https://wa.me/972523848599" style="display:block; text-align:center; background:#25D366; color:white; padding:12px; margin:10px; border-radius:8px; text-decoration:none; font-weight:bold;">
 اطلب الآن عبر واتساب 📱
 </a>
-<div style="position:relative; height:240px; background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover no-repeat;">
+<div style="position:relative; height:260px; background:url('https://images.unsplash.com/photo-1515377905703-c4788e51af15') center/cover no-repeat; overflow:hidden;">
 
-  <div style="position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.6);"></div>
+  <div style="position:absolute; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));"></div>
+
+  <div style="position:absolute; width:200%; height:100%; top:0; left:-100%; background:linear-gradient(120deg, transparent, rgba(212,175,55,0.2), transparent); animation:shine 3s infinite;"></div>
 
   <div style="position:relative; z-index:2; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;">
 
-    <h1 style="color:#d4af37; font-size:28px; font-weight:bold; letter-spacing:2px; text-shadow:0 0 15px #d4af37;">
+    <h1 style="color:#d4af37; font-size:30px; font-weight:bold; letter-spacing:2px; text-shadow:0 0 10px #d4af37;">
       OLIRA Beauty
     </h1>
 
-    <p style="color:white; font-size:18px; margin-top:8px;">
+    <p style="color:#fff; font-size:18px; margin-top:6px; opacity:0.9;">
       جمالك يبدأ من هنا ✨
     </p>
 
