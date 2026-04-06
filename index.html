@@ -162,6 +162,56 @@ button.add {
   50% { left: 100%; }
   100% { left: 100%; }
     }
+    .hero-btn {
+  margin-top: 20px;
+  padding: 14px 34px;
+  background: linear-gradient(45deg, #d4af37, #f8e08a, #d4af37);
+  background-size: 200% 200%;
+  border: none;
+  color: #111;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(212,175,55,0.45), 0 8px 25px rgba(0,0,0,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: goldShift 3s ease-in-out infinite;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 0 20px rgba(212,175,55,0.8), 0 12px 30px rgba(0,0,0,0.45);
+}
+
+.hero-btn:active {
+  transform: scale(0.98);
+}
+
+.hero-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+  transform: skewX(-20deg);
+  animation: btnShine 2.8s infinite;
+}
+
+@keyframes btnShine {
+  0% { left: -120%; }
+  55% { left: 140%; }
+  100% { left: 140%; }
+}
+
+@keyframes goldShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 </style></head>
 <body><header>
 <div class="logo-container">
@@ -186,6 +236,9 @@ button.add {
 
     <p style="color:#fff; font-size:18px; margin-top:6px; opacity:0.9;">
       جمالك يبدأ من هنا ✨
+        <button class="hero-btn" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'});">
+تسوق الآن ✨
+        </button>
     </p>
 
   </div>
