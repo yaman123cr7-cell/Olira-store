@@ -140,17 +140,29 @@ button.add {
     border-radius: 10px;
 }
 .instagram-float {
-   position: fixed;
-   bottom: 20px;
-   right: 20px;
-   background: #E1306C;
-   color: white;
-   font-size: 24px;
-   padding: 12px 15px;
-   border-radius: 50%;
-   text-decoration: none;
-   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-   z-index: 999;
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #111, #1f1f1f);
+  color: #d4af37;
+  font-size: 24px;
+  border: 1px solid rgba(212,175,55,0.45);
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35), 0 0 14px rgba(212,175,55,0.18);
+  z-index: 999;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.instagram-float:hover {
+  transform: translateY(-3px) scale(1.06);
+  border-color: rgba(212,175,55,0.85);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.45), 0 0 22px rgba(212,175,55,0.35);
 }
 
 .instagram-float:hover {
