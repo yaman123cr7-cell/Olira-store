@@ -9,6 +9,7 @@
 <meta name="author" content="OLIRA">
 
 <style>
+    
 body {
     font-family: Arial;
     margin: 0;
@@ -148,6 +149,47 @@ button.add {
 .instagram-float:hover {
    transform: scale(1.1);
    background: #c13584;
+/* ===== HERO SECTION ===== */
+.hero {
+  background: url('https://i.postimg.cc/ZR7f1Z1z/luxury-gold-black-beauty.jpg') center/cover;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero-overlay {
+  position: relative;
+  text-align: center;
+}
+
+.hero-text {
+  color: #d4af37;
+  font-size: 34px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: glow 2s infinite alternate;
+}
+
+.hero-sub {
+  color: white;
+  font-size: 18px;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #d4af37; }
+  to { text-shadow: 0 0 25px #d4af37; }
 }
 </style></head>
 <body><header>
@@ -166,57 +208,6 @@ button.add {
   </div>
 </div>
 
-<style>
-.hero {
-  background: url('https://i.postimg.cc/ZR7f1Z1z/luxury-gold-black-beauty.jpg') center/cover;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-}
-
-.hero-overlay {
-  position: relative;
-  text-align: center;
-}
-
-.hero-text {
-  color: #d4af37;
-  font-size: 32px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  animation: glow 2s infinite alternate;
-}
-
-.hero-sub {
-  color: white;
-  font-size: 18px;
-  margin-top: 5px;
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 5px #d4af37, 0 0 10px #d4af37;
-  }
-  to {
-    text-shadow: 0 0 15px #d4af37, 0 0 25px #d4af37;
-  }
-}
-
-.hero:hover {
-  transform: scale(1.02);
-  transition: 0.3s;
-}
-</style>
 <nav><button onclick="show('home')">الرئيسية</button>
 <button onclick="show('cart')">السلة</button>
 <button onclick="show('about')">من نحن</button>
