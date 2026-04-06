@@ -345,10 +345,9 @@ function show(section){
     document.getElementById(section).classList.add('active');
 }
 
-function addToCart(name,price){
-    cart.push({name,price});
-    alert("تمت الإضافة للسلة");
-    renderCart();
+function addToCart(name, price) {
+  const message = `مرحباً، أرغب بطلب من OLIRA Beauty:%0A• المنتج: ${name}%0A• السعر: ₪${price}%0Aأريد إكمال الطلب ومعرفة التوصيل.`;
+  window.open(`https://wa.me/972523848599?text=${message}`, '_blank');
 }
 
 function renderCart(){
