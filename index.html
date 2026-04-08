@@ -344,6 +344,23 @@ function show(section){
     document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
     document.getElementById(section).classList.add('active');
 }
+function handleProduct(btn, name, price) {
+  if (btn.classList.contains("sold-out")) {
+    alert("❌ هذا المنتج غير متوفر حالياً");
+    return;
+  }
+  addToCart(name, price);
+}
+
+function toggleSoldOut(btn) {
+  btn.classList.toggle("sold-out");
+
+  if (btn.classList.contains("sold-out")) {
+    btn.innerText = "❌ نفذ المنتج";
+  } else {
+    btn.innerText = "أضف للسلة";
+  }
+}
 
 function addToCart(name, price) {
   cart.push({ name, price: Number(price) });
@@ -362,21 +379,13 @@ function renderCart() {
       <div style="background:#fff; margin:10px 0; padding:12px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.08); text-align:right;">
         <strong>${item.name}</strong><br>
         السعر: ₪${item.price}<br>
-        <button onclick="removeFromCart(${index})" style="
-          margin-top:8px;
-          padding:8px 14px;
-          border:none;
-          border-radius:20px;
-          background:#111;
-          color:#fff;
-          cursor:pointer;
-        ">حذف</button>
+        <button onclick="removeFromCart(${index})" style="margin-top:8px; padding:8px 14px; border:none; border-radius:20px; background:#111; color:#fff; cursor:pointer;">حذف</button>
       </div>
     `;
     total += Number(item.price);
   });
 
-  document.getElementById("total").innerHTML = "الإجمالي: ₪" + total;
+  document.getElementById("total").innerText = "الإجمالي: ₪" + total;
 }
 
 function removeFromCart(index) {
@@ -402,9 +411,10 @@ function sendOrder() {
   text += `%0Aالإجمالي: ₪${total}%0A`;
   text += "أريد إكمال الطلب ومعرفة التوصيل.";
 
-  window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-}
-</script>
+  window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+    }
+    </script>
+
 <div class="contact">
     <h2>تواصل معنا</h2>
 
