@@ -382,22 +382,41 @@ button.add:hover {
 <button onclick="show('cart')">السلة</button>
 <button onclick="show('about')">من نحن</button>
 </nav><div id="home" class="section active">
-<h2>منتجاتنا</h2><div class="products"><div class="product">
-<img  src="https://i.postimg.cc/m1Hjs4Qm/1775146577261.png">
-<h3>كريم ترطيب</h3>
-<p>₪50</p>
-<button class="add" onclick="addToCart('كريم ترطيب',50)">نفذ المنتج ❌️</button>
-</div><div class="product">
-<img src="https://i.postimg.cc/zHg7rNn6/1775146581697.png">
-<h3>سيروم فيتامين C</h3>
-<p>₪70</p>
-<button class="add" onclick="addToCart('سيروم فيتامين C',70)">نفذ المنتج ❌️</button>
-</div><div class="product">
-<img src="https://i.postimg.cc/QKTm3DQs/1775146623233.png">
-<h3>زيت شعر</h3>
-<p>₪60</p>
-<button class="add" onclick="addToCart('زيت شعر',60)">نفذ المنتج ❌️</button>
-</div></div>
+<h2>منتجاتنا</h2>
+
+<div class="products">
+
+  <!-- المنتج 1 -->
+  <div class="product">
+    <img src="https://i.postimg.cc/KjLJkhyg/file-00000000d73c72438a78b05dbb199797.png">
+    <h3>سيروم فيتامين C</h3>
+    <p>₪70</p>
+    <button class="add sold-out" onclick="handleProduct(this,'سيروم فيتامين C',70)">
+      ❌ نفذ المنتج
+    </button>
+  </div>
+
+  <!-- المنتج 2 -->
+  <div class="product">
+    <img src="https://i.postimg.cc/9FdLc2p1/file-0000000035207246a60ba6cbe61cf4fc.png">
+    <h3>كريم ترطيب</h3>
+    <p>₪50</p>
+    <button class="add sold-out" onclick="handleProduct(this,'كريم ترطيب',50)">
+      ❌ نفذ المنتج
+    </button>
+  </div>
+
+  <!-- المنتج 3 -->
+  <div class="product">
+    <img src="https://i.postimg.cc/bwLL2R4k/file-00000000b8147243aa72f4a8e1dd94b2.png">
+    <h3>زيت شعر</h3>
+    <p>₪60</p>
+    <button class="add sold-out" onclick="handleProduct(this,'زيت شعر',60)">
+      ❌ نفذ المنتج
+    </button>
+  </div>
+
+</div>
 </div><div id="cart" class="section">
 <h2>🛒 سلة الشراء</h2>
 <div id="cartItems"></div>
