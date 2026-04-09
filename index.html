@@ -384,37 +384,60 @@ button.add:hover {
 </nav><div id="home" class="section active">
 <h2>منتجاتنا</h2>
 
+<div id="home" class="section active">
+<h2>منتجاتنا</h2>
+
 <div class="products">
 
-  <!-- المنتج 1 -->
-  <div class="product">
+<div class="product">
+    <span class="product-badge">🔥 الأكثر مبيعاً</span>
     <img src="https://i.postimg.cc/KjLJkhyg/file-00000000d73c72438a78b05dbb199797.png">
     <h3>سيروم فيتامين C</h3>
-    <p>₪70</p>
-    <button class="add sold-out" onclick="handleProduct(this,'سيروم فيتامين C',70)">
-      ❌ نفذ المنتج
-    </button>
-  </div>
 
-  <!-- المنتج 2 -->
-  <div class="product">
+    <div class="rating">★★★★★</div>
+
+    <div class="price-box">
+        <span class="old-price">₪90</span>
+        <span class="new-price">₪70</span>
+    </div>
+
+    <button class="add" onclick="addToCart('سيروم فيتامين C',70)">أضف للسلة</button>
+</div>
+
+
+<div class="product">
+    <span class="product-badge">✨ جديد</span>
     <img src="https://i.postimg.cc/9FdLc2p1/file-0000000035207246a60ba6cbe61cf4fc.png">
-    <h3>كريم ترطيب</h3>
-    <p>₪50</p>
-    <button class="add sold-out" onclick="handleProduct(this,'كريم ترطيب',50)">
-      ❌ نفذ المنتج
-    </button>
-  </div>
+    <h3>كريم الفحم</h3>
 
-  <!-- المنتج 3 -->
-  <div class="product">
+    <div class="rating">★★★★☆</div>
+
+    <div class="price-box">
+        <span class="old-price">₪80</span>
+        <span class="new-price">₪50</span>
+    </div>
+
+    <button class="add" onclick="addToCart('كريم الفحم',50)">أضف للسلة</button>
+</div>
+
+
+<div class="product">
+    <span class="product-badge">💎 فاخر</span>
     <img src="https://i.postimg.cc/bwLL2R4k/file-00000000b8147243aa72f4a8e1dd94b2.png">
-    <h3>زيت شعر</h3>
-    <p>₪60</p>
-    <button class="add sold-out" onclick="handleProduct(this,'زيت شعر',60)">
-      ❌ نفذ المنتج
-    </button>
-  </div>
+    <h3>زيت الشعر</h3>
+
+    <div class="rating">★★★★★</div>
+
+    <div class="price-box">
+        <span class="old-price">₪85</span>
+        <span class="new-price">₪60</span>
+    </div>
+
+    <button class="add" onclick="addToCart('زيت الشعر',60)">أضف للسلة</button>
+</div>
+
+</div>
+</div>
 
 </div>
 </div><div id="cart" class="section">
